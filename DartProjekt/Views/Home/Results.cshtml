@@ -1,0 +1,66 @@
+﻿@using DartProjekt.Controllers
+@using DartProjekt.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StartGame</title>
+</head>
+<body style="background-color:black">
+    <form method="POST" action="Results">
+        <table style="width: 100%; font-size: 22px;color:orange">
+            <tr>
+                @foreach (PLayersInfos player in ViewBag.selectedplayersName)
+                {
+                    <th>@player.VorName @player.NachName</th>
+                }
+            </tr>
+            <tr>
+                @foreach (int gametype in ViewBag.gametype)
+                {
+                    <td><label>@gametype</label></td>
+                }
+            </tr>
+            
+
+                @for (int i = 0; i < ViewBag.resultslistcount; i++)
+
+                {
+                    <tr>
+                        @foreach (Resultsinfo result in ViewBag.resultslist)
+                        {
+                            if (i <= @result.Results.Count)
+                            {
+                                int x = result.Results[i];
+                                <td><label>@result.Results[i]</label></td>
+                            }
+                            
+                        }
+                    </tr>
+                }
+
+
+         
+
+            <tr>
+                @foreach (PLayersInfos player in ViewBag.selectedplayersName)
+                {
+                    <th><input type="number" name="txtvalue+@player.Id" width="50"/></th>
+                }
+            </tr>
+        </table>
+        <br /><br />
+        <button type="submit" style="width: 50px">Enter</button>
+    </form>
+
+
+
+
+</body>
+</html>

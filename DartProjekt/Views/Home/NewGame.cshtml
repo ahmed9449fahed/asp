@@ -1,0 +1,39 @@
+﻿@using DartProjekt.Controllers
+
+@{
+    ViewBag.Title = "NewGame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<img src="../../fotos/10937615-Darts-Board-Stock-Photo-darts-dart-dartboard.jpg" style="margin-left: 15%; width: 70%; height: 200px;">
+<div style="margin-left: 20%">
+    <form method="POST" action="StartGame">
+        <table style="width: 100%; font-size: 18px; color: aliceblue">
+            <tr style="color: orange">
+                <th style="font-size: 22px">GroupeName</th>
+                <th style="font-size: 22px">Members</th>
+                <th>GameType</th>
+                <th>SelectGroup</th>
+            </tr>
+            @foreach (Groupsinfo group in ViewBag.AllGroups)
+            {
+                string members = "";
+                <tr>
+                    <td>@group.GroupName</td>
+
+                    @foreach (string member in group.GroupMembers)
+                    {
+                        members = member + "," + members;
+                    }
+                    <td>@members</td>
+                    <td>@group.GameType</td>
+                    <td><input type="radio" name="radio" value="@group.GroupId" style="width: 50px; height: 50px;"/></td>
+
+                </tr>
+            }
+        </table>
+        <br/>
+        <br/>
+        <button type="submit"  style="width: 200px; height: 35px;  color:aliceblue;background-color:orange">Start Game</button>
+    </form>
+</div>
+

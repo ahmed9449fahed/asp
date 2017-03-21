@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A14A47_DBDartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tb_SpielerGruppe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="SpielerId" Type="Int32" Nullable="false" />
+    <Property Name="GruupeId" Type="Int32" Nullable="false" />
+    <Property Name="Spieletype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Tb_winner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupeId" Type="Int32" Nullable="false" />
+    <Property Name="PLayerId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TbGruppen">
+    <Key>
+      <PropertyRef Name="GroupeID" />
+    </Key>
+    <Property Name="GroupeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TbSpieleren">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NachName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DB_A14A47_DBDartEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tb_SpielerGruppe" EntityType="Self.Tb_SpielerGruppe" />
+    <EntitySet Name="Tb_winner" EntityType="Self.Tb_winner" />
+    <EntitySet Name="TbGruppens" EntityType="Self.TbGruppen" />
+    <EntitySet Name="TbSpielerens" EntityType="Self.TbSpieleren" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,28 @@
+﻿@using DartProjekt.Controllers
+
+@{
+    ViewBag.Title = "MatchResults";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<img src="../../fotos/10937615-Darts-Board-Stock-Photo-darts-dart-dartboard.jpg" style="margin-left: 15%; width: 70%; height: 200px;">
+    <div style="margin-left: 28%">
+    <table style="width: 75%; font-size: 18px">
+        <tr >
+            <th style="color: orange;font-size: 22px">GroupeName</th>
+            
+            <th style="color: orange;font-size: 22px">Winner Name</th>
+        </tr>
+        @foreach (WinnerInfo winner in ViewBag.winnerinfos)
+        {
+            <tr>
+                <td style="color:cornsilk">@winner.GroupeName</td>
+           
+                <td style="color:cornsilk">@winner.WinnerName</td>
+            </tr>
+        }
+    </table>
+        </div>

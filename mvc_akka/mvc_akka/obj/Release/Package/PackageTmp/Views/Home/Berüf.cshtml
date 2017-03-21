@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Berüf";
+}
+<h2 style="font-family: fantasy; font-size: 50px">Job search</h2>
+<style>
+    body {
+           background-image: url("http://www.workinentertainment.com/blog/wp-content/uploads/2014/12/job-seacrhing.jpg");
+            background-size: cover;
+    }
+</style>
+<body>
+<form method="POST" action="../EditBeruf">
+    <textarea name="ID" rows="1">@ViewBag.ID</textarea><br/>
+    <label>Your Name</label><br/>
+    <textarea name="FirstName" style="width: 300px" rows="1">@ViewBag.FirstName</textarea><br/>
+    <br/><br/>
+    <label>YourEmailAdress</label><br/>
+    <textarea name="Email" style="width: 300px" rows="1">@ViewBag.UserEmail</textarea>
+    <h2>Berüf</h2><br/>
+    <label>Work:</label><br/>
+    <textarea name="Work" rows="1" style="width: 300px">@ViewBag.Work</textarea><br/><br/>
+    <label>CompanyName:</label><br/>
+    <textarea name="Company" rows="1" style="width: 300px">@ViewBag.Company</textarea><br/><br/>
+    <label>Descrebtion:</label><br/>
+    <textarea name="Descrebtion" rows="5" style="width: 300px">@ViewBag.Descrebtion</textarea><br/><br/>
+    <h2>Contact</h2><br/>
+    <label>Adress:</label><br/>
+    <textarea name="Adress" rows="2" style="width: 300px">@ViewBag.Adress</textarea><br/><br/>
+    <label>Telefon Number:</label><br/>
+    <textarea name="Telefon" rows="1" style="width: 300px">@ViewBag.Telefon</textarea><br/><br/>
+    <label>WebSite Or Email Adress:</label><br/>
+    <textarea name="WebSite" rows="1" style="width: 300px">@ViewBag.Email</textarea><br/><br/>
+    <h2>@ViewBag.EndMessage</h2>
+    <button style="width: 150px" type="submit">Save</button>
+</form>
+    
+</body>

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "SendMessage";
+}
+
+<h2>SendMessage</h2>
+
+<link rel="stylesheet" href="../../Content/Site2.css" />
+
+
+<form method="POST" action="SendMessagee" class="FormSignIn">
+    <label>Reciver</label><br/>
+    <textarea name="Reciver" rows="1" style="width: 400px">@ViewBag.reciver</textarea>
+    <br/>
+    <br/>
+    <label>Message</label><br/>
+    <textarea name="Message" rows="10" style="width: 800px">@ViewBag.message2</textarea>
+    <br/>
+    <button type="submit">Send</button>
+    <label>@ViewBag.Message</label>
+</form>

@@ -1,0 +1,30 @@
+﻿@using DartProjekt.Controllers
+
+@{
+    ViewBag.Title = "ShowGroups";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<img src="../../fotos/10937615-Darts-Board-Stock-Photo-darts-dart-dartboard.jpg" style="margin-left: 15%; width: 70%; height: 200px;">
+<div style="margin-left: 28%">
+    <table style="width: 100%; font-size: 18px; color:aliceblue">
+        <tr style="color: orange">
+            <th style="font-size: 22px">GroupeName</th>
+            <th style="font-size: 22px">Members</th>
+            <th  style="font-size: 22px">GameType</th>
+        </tr>
+        @foreach (Groupsinfo group in ViewBag.AllGroups)
+        {
+            string members = "";
+            <tr>
+                <td>@group.GroupName</td>
+
+                @foreach (string member in group.GroupMembers)
+                {
+                    members = member + "," + members;
+                }
+                <td>@members</td>
+                <td>@group.GameType</td>
+            </tr>
+        }
+    </table>
+</div>

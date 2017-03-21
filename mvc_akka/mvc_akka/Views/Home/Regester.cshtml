@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Regester";
+}
+
+<h2 style="font-family: fantasy; font-size: 50px">Regester</h2>
+
+    <link rel="stylesheet" href="../../Content/Site2.css"/>
+
+<style>
+    body {
+        background-image: url("http://www.workinentertainment.com/blog/wp-content/uploads/2014/12/job-seacrhing.jpg");
+        background-size: cover;
+    }
+</style>
+<body>
+<form method="GET" action="Regesterr" class="FormSignIn">
+    <label>First Name:</label>
+    <textarea type="text" style="width: 300px" name="NewFirstName" rows="1">@ViewBag.FirstName</textarea><br/><br/>
+    <label>Last Name:</label>
+    <textarea type="text" style="width: 300px" name="NewLastName" rows="1">@ViewBag.LastName</textarea><br/><br/>
+    <label>New PassWord:</label>
+    <input type="password" style="width: 300px" name="NewPassWord" value="@ViewBag.NewPassWord"/><br/><br/>
+    <label>Email:</label>
+    <textarea type="text" style="width: 300px" name="Email" rows="1">@ViewBag.Email</textarea><br/><br/>
+    <label>PassWord:</label>
+    <input type="password" style="width: 300px" name="EmailPassWord" value="@ViewBag.EmailPassWord"/><br/><br/>
+    <label>Confirmation message:</label>
+    <textarea type="text" style="width: 300px" name="ConfirmationMessage" rows="1"></textarea>@ViewBag.emailmessage<br/><br/>
+    <label>
+        @ViewBag.AlertMessage...<br/>
+
+    </label>
+    <button style="width:150px" type="submit" style="width: 50px">Ok</button>
+</form>
+</body>
+    

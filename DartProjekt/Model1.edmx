@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_A14A47_DBDartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tb_SpielerGruppe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SpielerId" Type="int" Nullable="false" />
+          <Property Name="GruupeId" Type="int" Nullable="false" />
+          <Property Name="Spieletype" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tb_winner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupeId" Type="int" Nullable="false" />
+          <Property Name="PLayerId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbGruppen">
+          <Key>
+            <PropertyRef Name="GroupeID" />
+          </Key>
+          <Property Name="GroupeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbSpieleren">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NachName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_A14A47_DBDartModelStoreContainer">
+          <EntitySet Name="Tb_SpielerGruppe" EntityType="Self.Tb_SpielerGruppe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_winner" EntityType="Self.Tb_winner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbGruppen" EntityType="Self.TbGruppen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbSpieleren" EntityType="Self.TbSpieleren" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A14A47_DBDartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tb_SpielerGruppe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SpielerId" Type="Int32" Nullable="false" />
+          <Property Name="GruupeId" Type="Int32" Nullable="false" />
+          <Property Name="Spieletype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Tb_winner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupeId" Type="Int32" Nullable="false" />
+          <Property Name="PLayerId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbGruppen">
+          <Key>
+            <PropertyRef Name="GroupeID" />
+          </Key>
+          <Property Name="GroupeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbSpieleren">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NachName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_A14A47_DBDartEntities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tb_SpielerGruppe" EntityType="Self.Tb_SpielerGruppe" />
+          <EntitySet Name="Tb_winner" EntityType="Self.Tb_winner" />
+          <EntitySet Name="TbGruppens" EntityType="Self.TbGruppen" />
+          <EntitySet Name="TbSpielerens" EntityType="Self.TbSpieleren" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A14A47_DBDartModelStoreContainer" CdmEntityContainer="DB_A14A47_DBDartEntities5">
+          <EntitySetMapping Name="Tb_SpielerGruppe">
+            <EntityTypeMapping TypeName="DB_A14A47_DBDartModel.Tb_SpielerGruppe">
+              <MappingFragment StoreEntitySet="Tb_SpielerGruppe">
+                <ScalarProperty Name="SpielerId" ColumnName="SpielerId" />
+                <ScalarProperty Name="GruupeId" ColumnName="GruupeId" />
+                <ScalarProperty Name="Spieletype" ColumnName="Spieletype" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_winner">
+            <EntityTypeMapping TypeName="DB_A14A47_DBDartModel.Tb_winner">
+              <MappingFragment StoreEntitySet="Tb_winner">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GroupeId" ColumnName="GroupeId" />
+                <ScalarProperty Name="PLayerId" ColumnName="PLayerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TbGruppens">
+            <EntityTypeMapping TypeName="DB_A14A47_DBDartModel.TbGruppen">
+              <MappingFragment StoreEntitySet="TbGruppen">
+                <ScalarProperty Name="GroupeID" ColumnName="GroupeID" />
+                <ScalarProperty Name="GroupeName" ColumnName="GroupeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TbSpielerens">
+            <EntityTypeMapping TypeName="DB_A14A47_DBDartModel.TbSpieleren">
+              <MappingFragment StoreEntitySet="TbSpieleren">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VorName" ColumnName="VorName" />
+                <ScalarProperty Name="NachName" ColumnName="NachName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

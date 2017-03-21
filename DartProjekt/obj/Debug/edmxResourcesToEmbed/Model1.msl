@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A14A47_DBDartModelStoreContainer" CdmEntityContainer="DB_A14A47_DBDartEntities5">
+    <EntitySetMapping Name="Tb_SpielerGruppe">
+      <EntityTypeMapping TypeName="DB_A14A47_DBDartModel.Tb_SpielerGruppe">
+        <MappingFragment StoreEntitySet="Tb_SpielerGruppe">
+          <ScalarProperty Name="SpielerId" ColumnName="SpielerId" />
+          <ScalarProperty Name="GruupeId" ColumnName="GruupeId" />
+          <ScalarProperty Name="Spieletype" ColumnName="Spieletype" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_winner">
+      <EntityTypeMapping TypeName="DB_A14A47_DBDartModel.Tb_winner">
+        <MappingFragment StoreEntitySet="Tb_winner">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GroupeId" ColumnName="GroupeId" />
+          <ScalarProperty Name="PLayerId" ColumnName="PLayerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbGruppens">
+      <EntityTypeMapping TypeName="DB_A14A47_DBDartModel.TbGruppen">
+        <MappingFragment StoreEntitySet="TbGruppen">
+          <ScalarProperty Name="GroupeID" ColumnName="GroupeID" />
+          <ScalarProperty Name="GroupeName" ColumnName="GroupeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbSpielerens">
+      <EntityTypeMapping TypeName="DB_A14A47_DBDartModel.TbSpieleren">
+        <MappingFragment StoreEntitySet="TbSpieleren">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VorName" ColumnName="VorName" />
+          <ScalarProperty Name="NachName" ColumnName="NachName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

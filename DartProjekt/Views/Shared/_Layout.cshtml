@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Layout1</title>
+    @Styles.Render("~/Content/css")
+    <style type="text/css">
+        li:hover {
+    background-color:orange;
+    color: white;
+}
+    </style>
+</head>
+@*<body style="background-image: url(../../fotos/dart-arrows-slide-1-alonzo-felix-studio.png); background-size:cover">*@
+<body style="background-color:black">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-collapse collapse">
+            <ul style="margin-left: 30%;" class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Home", "Home")</li>
+                <li>@Html.ActionLink("Addplayer", "Addplayer", "Home")</li>
+                <li>@Html.ActionLink("CreatGroup", "AddGroupe", "Home")</li>
+                <li>@Html.ActionLink("NewGame", "NewGame", "Home")</li>
+                <li>@Html.ActionLink("Groups", "ShowGroups", "Home")</li>
+                <li>@Html.ActionLink("MatchResults", "MatchResults", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                @*<li>@Html.ActionLink("ResetAll", "ResetAll", "Home")</li>*@
+                
+            </ul>
+        </div>
+    </div>
+    @RenderBody()
+</body>

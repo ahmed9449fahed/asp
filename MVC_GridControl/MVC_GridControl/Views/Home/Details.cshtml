@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MVC_GridControl.Tb_Berüf>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "Details";
+}
+@{
+    Layout = null;
+}
+<h2>Details</h2>
+<link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
+
+<div class="code-cut" style="position: absolute; left: 200px; right: 200px; top: 100px;bottom: 100px">
+   
+        @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(c => c.Name).Titled("Name").Filterable(true);
+    columns.Add(c => c.Beruf).Titled("Beruf").Filterable(true);
+    columns.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.ActionLink("Edit", "Edit", new {Name = o.Name}));
+
+}).WithPaging(10).Sortable(true);
+        )
+  
+</div>

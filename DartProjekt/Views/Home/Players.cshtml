@@ -1,0 +1,30 @@
+﻿@using DartProjekt.Models
+
+@{
+    ViewBag.Title = "NewGame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <img src="../../fotos/10937615-Darts-Board-Stock-Photo-darts-dart-dartboard.jpg" style="margin-left: 15%; width: 70%; height: 200px;">
+<form method="POST" action="GameType" style="margin-left: 30%">
+    <table style="width: 60%; font-size: 18px">
+        <tr style="color: orange">
+            <th>Player Name</th>
+            <th>Second Name</th>
+        </tr>
+        @foreach (PLayersInfos info in ViewBag.spielerenNamen)
+        {
+            <tr style="color: cornsilk">
+
+                <td>@info.VorName</td>
+                <td>@info.NachName</td>
+                <td><input type="checkbox" name="check+@info.Id" value="off" style="width: 35px;height: 35px"/></td>
+            </tr>
+        }
+    </table>
+    <br/><br/>
+    <button type="submit" style="width: 200px; height: 35px; color:aliceblue;background-color:orange ;">Next-></button>
+</form>
+</body>
+

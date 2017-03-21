@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "SignIn";
+}
+<style>
+    body {
+        background-image: url("http://www.workinentertainment.com/blog/wp-content/uploads/2014/12/job-seacrhing.jpg");
+        background-size: cover;
+    }
+</style>
+<body>
+    <h2 style="font-family: fantasy;font-size: 50px">SignIn</h2>
+
+    <link rel="stylesheet" href="../../Content/Site2.css" />
+
+
+    <form method="POST" action="GoToMyWorks" class="FormSignIn">
+        <label>Email</label>
+        <textarea type="text" style="width: 300px" name="Email" rows="1">@ViewBag.Email</textarea><br /><br />
+        <label>Password</label>
+        <input type="password" style="width: 300px" name="Password" /><br /><br />
+        <button style="width: 150px" type="submit">SignIn</button><br/>
+        <a href="Regester">Are you New ?</a>
+    </form>
+</body>

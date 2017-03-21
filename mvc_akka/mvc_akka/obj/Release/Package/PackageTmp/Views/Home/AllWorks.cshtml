@@ -1,0 +1,51 @@
+﻿@model IEnumerable<mvc_akka.Tb_Berüf>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "AllWorks";
+}
+
+<html>
+<head>
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
+    <style>
+        body {
+            background-image: url("http://www.intrawallpaper.com/static/images/White-Background-9B1.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="code-cut" style="position: absolute; left: 200px; right: 200px; top: 100px; bottom: 100px">
+
+        @Html.Grid(Model).Columns(columns =>
+   {
+       columns.Add(c => c.Name).Titled("Name").Filterable(true);
+       columns.Add(c => c.Beruf).Titled("Beruf").Filterable(true);
+       columns.Add(c => c.CompanyName).Titled("CompanyName").Filterable(true);
+       columns.Add(c => c.Describe).Titled("Describe").Filterable(true);
+       columns.Add(c => c.Adress).Titled("Adress").Filterable(true);
+       columns.Add(c => c.Email).Titled("Email").Filterable(true);
+       columns.Add().Encoded(false).Sanitized(true).SetWidth(10).RenderValueAs(o => Html.ActionLink("-", "Edit", new
+       {
+           Email = o.UsersEmail,
+           FirstName = o.Name,
+           Work = o.Beruf,
+           Company = o.CompanyName,
+           Descrebtion = o.Describe,
+           Adress = o.Adress,
+           Telefon = o.TelephoneNumber,
+           WebSite = o.Email
+       }));
+   }).WithPaging(10).Sortable(true);
+        )
+
+    </div>
+</body>
+
+
+
+</html>

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "GameType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<img src="../../fotos/10937615-Darts-Board-Stock-Photo-darts-dart-dartboard.jpg" style="margin-left: 15%; width: 70%; height: 200px;">
+<form method="POST" action="CreatNewGruppe" style="margin-left: 25%">
+    <br/>
+    <br/>
+    <p style="font-size: 24px; color: orange">
+        GroupName
+        <input type="text" width="60" name="groubname"/>
+        GameType
+        <select name="options">
+            <option>301</option>
+            <option>501</option>
+            <option>701</option>
+            <option>1001</option>
+        </select>
+    </p>
+
+
+    <br/><br/>
+    <button type="submit" style="width: 200px;  color:aliceblue;background-color:orange"> Creat</button>
+</form>
+
